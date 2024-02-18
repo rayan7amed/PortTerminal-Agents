@@ -19,10 +19,12 @@ public class DFAgent extends Agent{
         // Register the DF service in the yellow pages
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
+
         ServiceDescription sd = new ServiceDescription();
         sd.setType("DF");
         sd.setName("DF");
         dfd.addServices(sd);
+        
         try {
             DFService.register(this, dfd);
         }

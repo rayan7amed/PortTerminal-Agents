@@ -94,7 +94,7 @@ public class Simulation {
 
             System.out.println("Port Terminal is ready!!!");
 
-            ////STATE, PORTCODE, DATE, DEST, MANIFEST////
+            ////STATE, PORTCODE, DATE, DEST, MANIFEST, TRANSPORTER_TYPE////
             //MANIFEST form: [c1,c2,c3]
             Object[] ShipArgs = new Object[6];
             ShipArgs[0] = "PICKUP";
@@ -102,7 +102,7 @@ public class Simulation {
             ShipArgs[2] = LocalDateTime.now().toString();
             ShipArgs[3] = "GDANSK";
             ShipArgs[4] = RandomContainerGenerator.GenerateContainers(10).toString();
-            ShipArgs[5] = "ShipAgent1";
+            ShipArgs[5] = "Ship";
             AgentController ShipAgent1 = mainContainer.createNewAgent("ShipAgent1", "agents.ShipAgent", ShipArgs);
             ShipAgent1.start();
 

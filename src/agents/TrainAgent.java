@@ -17,7 +17,7 @@ import utils.*;
 
 
 
-public class TrainAgent extends BaseAgent {
+public class TrainAgent extends TransporterAgent {
 
     String PortCode;
     String NextDest;

@@ -9,6 +9,10 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 
+import java.time.LocalDateTime;
+import java.util.*;
+import utils.*;
+
 public abstract class BaseAgent extends Agent {
     String PortCode;
     ACLMessage message;
@@ -56,5 +60,31 @@ public abstract class BaseAgent extends Agent {
         }
     }
 
+
+    ///////////////Schedule////////////
+    public String ScheduleDropoff(String type, LocalDateTime ArrivalDate, String NextDest, List<Container> Manifest) {
+        return "SCHEDULE!!!"+type+"!!!DROPOFF!!!"+ArrivalDate.toString()+"!!!"+NextDest+"!!!"+ Manifest.toString();
+    }
+
+    public String SchedulePickup(String type, LocalDateTime ArrivalDate, String NextDest, List<Container> Manifest) {
+        return "SCHEDULE!!!"+type+"!!!PICKUP!!!"+ArrivalDate.toString()+"!!!"+NextDest+"!!!"+ Manifest.toString();
+    }
+
+    public String ScheduleDropoffandPickup(String type, LocalDateTime ArrivalDate, String NextDest, List<Container> Manifest) {
+        return "SCHEDULE!!!"+type+"!!!DROPOFFandPICKUP!!!"+ArrivalDate.toString()+"!!!"+NextDest+"!!!"+ Manifest.toString();
+    }
+
+    ////////////////Arrival///////////////
+    public String ArrivalDropoff(String type, LocalDateTime ArrivalDate, String NextDest, List<Container> Manifest) {
+        return "ARRIVAL!!!"+type+"!!!DROPOFF!!!"+ArrivalDate.toString()+"!!!"+NextDest+"!!!"+ Manifest.toString();
+    }
+
+    public String ArrivalPickup(String type, LocalDateTime ArrivalDate, String NextDest) {
+        return "ARRIVAL!!!"+type+"!!!PICKUP!!!"+ArrivalDate.toString()+"!!!"+NextDest;
+    }
+
+    public String ArrivalDropoffandPickup(String type, LocalDateTime ArrivalDate, String NextDest, List<Container> Manifest) {
+        return "ARRIVAL!!!"+type+"!!!DROPOFFandPICKUP!!!"+ArrivalDate.toString()+"!!!"+NextDest+"!!!"+ Manifest.toString();
+    }
 }
 

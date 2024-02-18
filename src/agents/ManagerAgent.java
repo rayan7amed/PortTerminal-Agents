@@ -68,7 +68,7 @@ public class ManagerAgent extends BaseAgent{
 
 
     private class GetCranes extends OneShotBehaviour {
-        public void  action(){
+        public void action(){
             DFAgentDescription template1 = new DFAgentDescription();
             DFAgentDescription template2 = new DFAgentDescription();
             DFAgentDescription template3 = new DFAgentDescription();
